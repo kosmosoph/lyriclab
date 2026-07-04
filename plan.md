@@ -113,9 +113,13 @@ model Comparison {
 ## Faze razvoja (5 dana)
 
 ### Dan 1 — Infrastruktura i Auth
-- [ ] Next.js projekat setup (TypeScript, Tailwind, ESLint)
-- [ ] PostgreSQL konekcija (Supabase besplatni tier)
-- [ ] Prisma setup + migracije
+- [x] Kreiraj Next.js projekat sa pnpm i `src/` folder strukturom
+- [x] Instalirani ESLint, Tailwind CSS, TypeScript sa default podešavanjima
+- [x] Kreiraj Supabase account i besplatnu PostgreSQL bazu i poveži preko Session pooler-a
+- [x] Instaliraj Prisma
+- [x] generiši API ključ Gemini
+- [ ] Napravi Prisma schema sa User, Song, Analysis tabelama
+- [ ] Pokreni prvu migraciju: `pnpm prisma migrate dev --name init`
 - [ ] NextAuth.js (email/password registracija i login)
 - [ ] Osnovna navigacija i layout
 
