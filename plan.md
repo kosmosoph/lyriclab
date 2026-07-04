@@ -118,8 +118,9 @@ model Comparison {
 - [x] Kreiraj Supabase account i besplatnu PostgreSQL bazu i poveži preko Session pooler-a
 - [x] Instaliraj Prisma
 - [x] generiši API ključ Gemini
-- [ ] Napravi Prisma schema sa User, Song, Analysis tabelama
-- [ ] Pokreni prvu migraciju: `pnpm prisma migrate dev --name init`
+- [x] Prisma schema napisana (User, Song, Analysis, Comparison)
+- [x] `pnpm prisma migrate dev --name init` uspešno izvršena prva migracija — tabele 
+      potvrđene u Supabase dashboard-u
 - [ ] NextAuth.js (email/password registracija i login)
 - [ ] Osnovna navigacija i layout
 
@@ -147,6 +148,21 @@ model Comparison {
 - [ ] README.md sa screenshotovima
 - [ ] Portfolio stranica opis projekta
 - [ ] Intervju priprema dokument
+
+## TODO — Post-MVP: Comparison model relacije
+Trenutno `Comparison.songAId` i `Comparison.songBId` NEMAJU `@relation` 
+vezu ka Song tabeli (labava veza, samo string ID-jevi bez foreign key-a).
+Nakon MVP-a, doraditi:
+- [ ] Dodati `@relation` za songAId i songBId ka Song modelu (relation names)
+- [ ] Rešiti onDelete ponašanje (šta ako se pesma obriše, a postoji 
+      poređenje koje je referenciše?)
+
+## ARHITEKTURNE DOPUNE (dodato tokom Dana 1)
+- Global state: Zustand (umesto samo React useState gde ima smisla za 
+  deljeno stanje)
+- Service Layer pattern: sav DB pristup i API pozivi idu kroz 
+  services/*.ts module — komponente i API rute nikad direktno ne pozivaju 
+  Prisma ili fetch
 
 ---
 
