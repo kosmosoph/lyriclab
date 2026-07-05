@@ -122,6 +122,11 @@ model Comparison {
 - [x] `pnpm prisma migrate dev --name init` uspešno izvršena prva migracija — tabele 
       potvrđene u Supabase dashboard-u
 - [ ] NextAuth.js (email/password registracija i login)
+  - [x] NextAuth v5 skelet postavljen (`src/auth.ts`, catch-all API route)
+  - [ ] Credentials provider (bcrypt + Prisma preko Service Layer)
+  - [ ] Google OAuth provider
+  - [ ] Middleware za zaštitu ruta
+  - [ ] Login/register stranice
 - [ ] Osnovna navigacija i layout
 
 ### Dan 2 — Core funkcionalnost (Songs + AI)
