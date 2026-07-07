@@ -123,7 +123,7 @@ model Comparison {
       potvrđene u Supabase dashboard-u
 - [ ] NextAuth.js (email/password registracija i login)
   - [x] NextAuth v5 skelet postavljen (`src/auth.ts`, catch-all API route)
-  - [ ] Credentials provider (bcrypt + Prisma preko Service Layer)
+  - [~] Credentials provider (bcrypt + Prisma preko Service Layer) — KOD NAPISAN, imports čisti, ALI NIJE funkcionalno testiran (nema login forme još da pošalje pravi zahtev)
   - [ ] Google OAuth provider
   - [ ] Middleware za zaštitu ruta
   - [ ] Login/register stranice
@@ -168,6 +168,8 @@ Nakon MVP-a, doraditi:
 - Service Layer pattern: sav DB pristup i API pozivi idu kroz 
   services/*.ts module — komponente i API rute nikad direktno ne pozivaju 
   Prisma ili fetch
+- [x] Prisma 7 adapter pattern implementiran u src/lib/prisma.ts (@prisma/adapter-pg + pg, singleton preko globalThis)
+- [x] src/services/userService.ts kreiran sa findUserByEmail()
 
 ---
 
